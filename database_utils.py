@@ -9,6 +9,7 @@ _TABLE_NAME = "readings"
 
 def write_to_db(db_path: str, df: pd.DataFrame) -> None:
     db = sqlite3.connect(db_path)
+    df['timestamp'] = df['timestamp'].apply(str)
     with db:
         db.execute(f"CREATE TABLE IF NOT EXISTS {_TABLE_NAME} (" +
                    "timestamp DATE UNIQUE NOT NULL" +
