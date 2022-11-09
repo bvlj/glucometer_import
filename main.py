@@ -14,6 +14,7 @@ if __name__ == "__main__":
     else:
         csv_path = None
 
-    df = fetch_readings(driver_name, csv_path)
+    df = fetch_readings(driver_name, csv_path=csv_path, verbose=True)
     write_to_db(db_path, df)
+    print(f'Saved readings in {db_path}')
     print(df)
