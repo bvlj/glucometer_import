@@ -43,6 +43,13 @@ class GlucometerDevice(abc.ABC):
     def get_readings(self) -> Generator[common.AnyReading, None, None]:
         pass
 
+    @abc.abstractmethod
+    def get_reading_count(self) -> int:
+        """
+        Returns the number of available readings on the device.
+        """
+        pass
+
 
 @dataclasses.dataclass
 class Driver:

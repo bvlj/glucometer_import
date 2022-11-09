@@ -147,7 +147,7 @@ class Device(serial.SerialDevice, driver.GlucometerDevice):
 
         return response.unit
 
-    def _get_reading_count(self) -> int:
+    def get_reading_count(self) -> int:
         response = self._send_request(
             _READ_RECORD_COUNT_REQUEST, None, _READ_RECORD_COUNT_RESPONSE
         )
@@ -167,7 +167,7 @@ class Device(serial.SerialDevice, driver.GlucometerDevice):
         )
 
     def get_readings(self) -> Generator[common.AnyReading, None, None]:
-        record_count = self._get_reading_count()
+        record_count = self.get_reading_count()
         for record_id in range(record_count):
             reading = self._get_reading(record_id)
             if reading:
