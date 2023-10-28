@@ -1,7 +1,7 @@
 attrs==21.4.0
 autopep8==1.6.0
 construct==2.10.68
-numpy==1.22.4
+numpy==1.25.0
 pandas==1.4.2
 pycodestyle==2.8.0
 PYSCSI==2.1.0
