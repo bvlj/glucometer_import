@@ -13,7 +13,6 @@ auto-detected.
 """
 
 import binascii
-import datetime
 import logging
 from typing import Any, Dict, Generator, Optional
 
