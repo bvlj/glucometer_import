@@ -1,6 +1,7 @@
 attrs==25.3.0
 autopep8==2.3.2
 construct==2.10.70
+cython-sgio==1.1.2
 numpy==2.2.6
 pandas==2.2.3
 pycodestyle==2.13.0
@@ -8,6 +9,7 @@ PYSCSI==2.1.0
 pyserial==3.5
 python-dateutil==2.9.0.post0
 pytz==2025.2
+pyudev==0.24.4
 setuptools==80.8.0
 six==1.17.0
 tzdata==2025.2

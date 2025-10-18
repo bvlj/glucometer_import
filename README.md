@@ -8,13 +8,17 @@ a sqlite database.
 Configure device access
 
 ```bash
-# Add permission to access /dev/tty0
+# For OT Verio IQ
+# - Add permission to access /dev/tty0
 sudo usermod -a -G dialout $(whoami)
 sudo usermod -a -G tty $(whoami)
-
-# Disable ModemManager
+# - Disable ModemManager
 systemctl disable ModemManager.service
 systemctl stop ModemManager.service
+
+# For OT Verio Reflect
+# - Add permission to access /dev/sda
+sudo usermod -a -G disk $(whoami)
 ```
 
 Install dependencies
@@ -34,6 +38,8 @@ pip install -r requirements.txt
 Where:
 - `$DEVICE_DRIVER` is the name of the [driver](./glucometerutils/drivers/) to
   be used
+    - `otverioiq`
+    - `otverioreflect`
 - `readings.db` is the output path of the sqlite database
 - (Optional) `readings.csv` is the path of the DataFrame CSV
 
